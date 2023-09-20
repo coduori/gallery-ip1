@@ -30,4 +30,12 @@ pipeline {
             }
         }
     }
+    post {  
+        success {  
+            echo 'IP 1 Project successfully deployed!'  
+        }  
+        failure {  
+            mail body: $DEFAULT_CONTENT, subject: $DEFAULT_SUBJECT, to: $DEFAULT_RECIPIENTS;  
+        }  
+    }  
 }
